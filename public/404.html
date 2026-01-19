@@ -5,9 +5,15 @@
     <title>Redirecting...</title>
     <script>
       // Single Page App redirect for GitHub Pages
-      // Converts /posts/my-slug into /?p=/posts/my-slug
-      const path = window.location.pathname + window.location.search + window.location.hash;
-      window.location.replace(window.location.origin + '/?p=' + encodeURIComponent(path));
+      // Converts /cj-blog/posts/my-slug into /cj-blog/?p=/posts/my-slug
+      const basePath = '/cj-blog';
+      const fullPath = window.location.pathname;
+      // Remove base path to get the route path
+      const routePath = fullPath.startsWith(basePath) 
+        ? fullPath.slice(basePath.length) || '/'
+        : fullPath;
+      const pathWithQuery = routePath + window.location.search + window.location.hash;
+      window.location.replace(window.location.origin + basePath + '/?p=' + encodeURIComponent(pathWithQuery));
     </script>
   </head>
   <body>
