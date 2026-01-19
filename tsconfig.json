@@ -16,7 +16,8 @@
       "noUnusedParameters": true,
       "noFallthroughCasesInSwitch": true,
       "esModuleInterop": true,
-      "allowSyntheticDefaultImports": true
+      "allowSyntheticDefaultImports": true,
+      "jsxImportSource": "@emotion/react"
     },
     "include": ["src", "posts"]
   }
