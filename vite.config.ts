@@ -22,5 +22,5 @@ export default defineConfig({
       ],
     }),
   ],
-  base: '/', // Will change to repo name for GitHub Pages later
+  base: '/cj-blog/',
 });
